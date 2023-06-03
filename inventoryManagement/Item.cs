@@ -21,14 +21,13 @@ class Item
         get { return _quantity; }
     }
 
-    public Item(string barcode, string name, int quantity)
+    public Item(string barcode, string name)
     {
         if (Barcodes.Contains(barcode)) throw new Exception("Item with that barcode already exists");
-        if (quantity < 0) throw new Exception("Quantity cannot be negative");
 
         _barcode = barcode;
         _name = name;
-        _quantity = quantity;
+        _quantity = 0;
 
         Barcodes.Add(barcode);
     }
