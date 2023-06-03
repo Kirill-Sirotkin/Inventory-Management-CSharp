@@ -28,6 +28,11 @@ class Inventory
         _instance = this;
     }
 
+    ~Inventory()
+    {
+        Console.WriteLine("Inventory instance destroyed.");
+    }
+
     public bool AddItem(Item item, int quantity)
     {
         if (GetCapacity() + quantity > _maxCapacity) return false;
